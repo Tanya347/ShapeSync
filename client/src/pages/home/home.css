@@ -1,0 +1,19 @@
+.home .banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home .banner img{
+    height: 300px;
+    margin-top: 80px;
+}
+
+.home .mainContainer {
+    margin: 50px 0;
+    display: flex;
+    flex-flow: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}

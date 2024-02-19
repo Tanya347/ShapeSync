@@ -7,9 +7,11 @@ const Footer = () => {
       "alignItems":"center",
       "justifyContent":"center",
       "height":"100px",
-      "backgroundColor":"#FECDA6"
+      "backgroundColor":"#BE3144",
+      "color":"white",
+      "fontWeight":"800"
     }}>
-      <p>Workout Planner</p>
+      <p>ShapeSync</p>
     </div>
   )
 }
