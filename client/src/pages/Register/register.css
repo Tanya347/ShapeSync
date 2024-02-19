@@ -4,7 +4,7 @@ html {
 }
 
 .registerCard {
-    /* background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .5)), url("../../../public/Assets/register-bg.png"); */
+    background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .5)), url("../../../public/Assets/register.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 1000px;
@@ -102,7 +102,7 @@ form .txt_field_img {
     width: 100%;
     height: 50px;
     border: none;
-    background: #26AEC0;
+    background: var(--red);
     border-radius: 25px;
     font-size: 18px;
     color: white;
@@ -119,7 +119,7 @@ form .txt_field_img {
 }
 
 .signup_link a {
-    color: #26AEC0;
+    color: var(--orange);
     text-decoration: none;
 }
 

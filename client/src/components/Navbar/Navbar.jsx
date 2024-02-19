@@ -8,13 +8,6 @@ import { AuthContext } from "../../context/authContext"
 
 const Navbar = () => {
     const [navbar, setNavbar] = useState(false);
-    const changeBackground = () => {
-        if (window.scrollY >= 80) {
-            setNavbar(true)
-        } else {
-            setNavbar(false)
-        }
-    };
 
     const navigate = useNavigate()
 
@@ -25,26 +18,26 @@ const Navbar = () => {
         navigate("/")
     }
 
-    window.addEventListener('scroll', changeBackground)
+
 
     return (
         <div className={navbar ? 'navContainer active' : 'navContainer'}>
-            {/* <Link to="/"> 
-                <p className='navLogo'><img src={process.env.PUBLIC_URL + "/Assets/brand.png"} alt="" /></p>
-            </Link> */}
+            <Link to="/home"> 
+                <p className='navLogo'>ShapeSync</p>
+            </Link>
 
             <input type="checkbox" id='menu-bar' />
             <label htmlFor="menu-bar"><FontAwesomeIcon icon={faBars} className="icon" /></label>
             <nav className='navbar'>
                 <ul>
-                    <Link to="/explore">
-                        <li><p>Explore</p></li>
+                    <Link to="/newRoutine">
+                        <li><p>Routine</p></li>
                     </Link>
-                    <Link to="/new">
-                        <li><p>New Post</p></li>
+                    <Link to="/newEntry">
+                        <li><p>Entry</p></li>
                     </Link>
-                    <Link to="/all">
-                        <li><p>Activities</p></li>
+                    <Link to="/entries">
+                        <li><p>Entries</p></li>
                     </Link>
                     {user ? (<>
 

@@ -26,7 +26,7 @@ function Login({ title, link }) {
     try {
       const res = await axios.post("http://localhost:2000/api/auth/login", credentials);
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data.details });
-      navigate(`${link}`);
+      navigate('/home');
     } catch (err) {
       if (err.response && err.response.data) {
         // If error response and data exist, dispatch LOGIN_FAILURE with error message
@@ -44,7 +44,7 @@ function Login({ title, link }) {
       <Navbar />
       <div className="loginCard">
         <div className="center">
-          <h1>{title}</h1>
+          <h1>Welcome Back!</h1>
           <form>
             <div className="txt_field">
               <input

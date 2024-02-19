@@ -7,6 +7,7 @@ import Entries from "./pages/Entry/Entries";
 import CreateRoutine from "./pages/Routine/CreateRoutine";
 import { useContext} from "react";
 import { AuthContext } from "./context/authContext";
+import Home from "./pages/home/Home";
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login/>} link="/"/>
         <Route path="/register" element={<Register/>} />
         
