@@ -30,11 +30,11 @@ const Navbar = () => {
             <label htmlFor="menu-bar"><FontAwesomeIcon icon={faBars} className="icon" /></label>
             <nav className='navbar'>
                 <ul>
-                    <Link to="/newRoutine">
+                    <Link to="/routines">
                         <li><p>Routine</p></li>
                     </Link>
-                    <Link to="/newEntry">
-                        <li><p>Entry</p></li>
+                    <Link to="/meals">
+                        <li><p>Meal</p></li>
                     </Link>
                     <Link to="/entries">
                         <li><p>Entries</p></li>

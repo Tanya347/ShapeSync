@@ -12,6 +12,12 @@ const EntrySchema = new mongoose.Schema(
                 ref: 'Routine'
             }
         ],
+        meals: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Meal'
+            }
+        ],
         author: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',

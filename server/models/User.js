@@ -31,7 +31,13 @@ const UserSchema = new mongoose.Schema(
                 type: mongoose.Schema.Types.ObjectId,
                 ref: 'Entry'
             }
-        ]
+        ],
+        routines: [
+            {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'Routine'
+            }
+        ],
     },
     {
         timestamps: true

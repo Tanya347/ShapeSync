@@ -16,16 +16,19 @@ const Home = () => {
           image="/Assets/planner.png" 
           name="Entries" 
           description="Keep track of your daily progress"
+          view="/entries"
         />
         <HomeComp 
           image="/Assets/routine.png" 
           name="Routines"
           description="Add personalized routines"
+          view="/routines"
         />
         <HomeComp 
           image="/Assets/meal.png" 
           name="Meals"
           description="Add personalized meals"
+          view="/meals"
         />
 
       </div>

@@ -1,10 +1,11 @@
 import React from 'react'
 import "./homeComp.css"
+import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faEye} from '@fortawesome/free-solid-svg-icons'
 
 
-const HomeComp = ({image, name, description}) => {
+const HomeComp = ({image, name, description, view}) => {
   return (
     <div className='homeCompContainer'>
         <div className="imgCont">
@@ -20,8 +21,10 @@ const HomeComp = ({image, name, description}) => {
             </div>
             {/* view */}
             <div className="viewButton">
-                <button><FontAwesomeIcon icon={faEye} /></button>
-                <p>Add</p>
+                <Link to={view}>
+                    <button><FontAwesomeIcon icon={faEye} /></button>
+                </Link>
+                <p>View</p>
             </div>
         </div>
         <button></button>
