@@ -6,7 +6,7 @@ const RoutineSchema = new mongoose.Schema(
         author: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true},
         workout_type: { type: String, required: true },
         body_part: {type: String, required: true},
-        reps: {type: Number, default: 10}
+        link: {type: String, required: true}
     },
     {
         timestamps: true

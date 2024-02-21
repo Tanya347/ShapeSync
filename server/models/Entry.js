@@ -27,10 +27,8 @@ const EntrySchema = new mongoose.Schema(
             type: Number,
             default: 30
         },
-        satisfaction: {
+        calories: {
             type: Number,
-            min: 1,
-            max: 10
         }
     },
     {

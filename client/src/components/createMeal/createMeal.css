@@ -1,0 +1,81 @@
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.418);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1000;
+}
+
+.mContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    height: fit-content;
+    position: relative;
+    width: 400px;
+}
+
+
+.mClose {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.mClose:hover {
+    color: rgba(0, 0, 0, 0.699);
+}
+
+.mTitle {
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+    padding: 10px 0;
+}
+
+.mContainer .formInput,
+#description {
+    font-size: 1.0rem;
+    padding: 5px;
+    margin: 15px;
+}
+
+.mButton {
+    border: none;
+    padding: 10px 20px;
+    background-color: #7451F8;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 200px;
+    margin-top: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+.mButton:hover {
+    background-color: #7551f8a1;
+}
+
+#options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#options label {
+    margin-bottom: 10px;
+}

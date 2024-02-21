@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar/Navbar"
 import Footer from "../../components/Footer/Footer"
 import HomeComp from '../../components/homeComp/HomeComp'
 
+
 const Home = () => {
   return (
     <div className='home'>
@@ -33,6 +34,7 @@ const Home = () => {
 
       </div>
       <Footer />
+      
     </div>
   )
 }
