@@ -19,5 +19,7 @@ export const category = [
     'Grill',
     'Breakfast & Brunch',
     'Salads',
-    'Drinks'
+    'Drinks',
+    'Junk',
+    'Main Course',
 ]

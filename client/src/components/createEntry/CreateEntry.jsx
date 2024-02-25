@@ -45,8 +45,6 @@ const CreateEntry = ({ setOpen }) => {
         setInfo(prev => ({ ...prev, [id]: selectedOptions }));
     }
 
-
-    console.log(info)
     return (
         <div className="modal">
             <div className="mContainer">

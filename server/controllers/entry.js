@@ -70,7 +70,9 @@ export const createEntry = async (req, res, next) => {
   
   export const getEntries = async (req, res, next) => {
     try {
-      const entries = await Entry.find();
+      const entries = await Entry.find()
+        .populate('meals', 'name') 
+        .populate('routines', 'name')
       res.status(200).json(entries);
     } catch (err) {
       next(err)

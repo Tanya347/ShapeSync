@@ -58,7 +58,7 @@ const CreateMeal = ({ setOpen }) => {
                         cols="30"
                         rows="10"
                         onChange={handleChange}
-                        placeholder='Add nutrient details'>
+                        placeholder='Add meal details'>
                     </textarea>
                     <input
                         className="formInput"
