@@ -11,7 +11,7 @@ const CreateEntry = ({ setOpen }) => {
 
     const { user } = useContext(AuthContext);
     const [info, setInfo] = useState({});
-    const {data} = useFetch(`/classes/${user.class}`)
+    const {data} = useFetch(`/entries/fetchMealsAndRoutines/${user._id}`)
 
     // set the usestate to the data user passed 
     const handleChange = (e) => {
@@ -22,58 +22,71 @@ const CreateEntry = ({ setOpen }) => {
     const handleClick = async (e) => {
         e.preventDefault();
 
-        const newQuery = {
-            ...info, author: user.name
+        const newEntry = {
+            ...info, author: user._id
         }
         try {
-            await axios.post("http://localhost:5500/api/queries", newQuery, {
+            await axios.post('http://localhost:2000/api/entries/', newEntry, {
                 withCredentials: false
             })
             setOpen(false)
-            console.log(newQuery)
+            console.log(newEntry)
         }
         catch (err) {
             console.log(err)
         }
     }
 
-    console.log("first")
+    const handleMultiSelectChange = (e) => {
+        const { id, options } = e.target;
+        const selectedOptions = Array.from(options)
+            .filter(option => option.selected)
+            .map(option => option.value);
+        setInfo(prev => ({ ...prev, [id]: selectedOptions }));
+    }
 
+
+    console.log(info)
     return (
         <div className="modal">
             <div className="mContainer">
                 
             <FontAwesomeIcon icon={faXmark} className="mClose" onClick={() => setOpen(false)}/>
 
-                <div className="mTitle">Send Query</div>
+                <div className="mTitle">Create Entry</div>
 
                 <form>
                     <input
                         className="formInput"
-                        type="text"
+                        type="date"
                         onChange={handleChange}
-                        id="title"
-                        placeholder='Enter your query title'
+                        id="date"
                     />
-                    <textarea
-                        name="Query"
-                        id="description"
-                        cols="30"
-                        rows="10"
-                        onChange={handleChange}
-                        placeholder='Describe your query'>
-                    </textarea>
+                    
                     <div className="formInput" id='options'>
-                    <label>Choose Teacher</label>
-                    <select id="queryTo">
-                        <option key={0} value="none">-</option>
-                        {
-                            data?.subjects?.map((sub, index) => (
-                               
-                                <option key={index} value={sub.teacher._id}>{sub.teacher.teachername}</option>
-                            ))
-                        }
-                    </select>
+                        <label>Choose Meals</label>
+                        <select
+                            id="meals"
+                            multiple
+                            onChange={handleMultiSelectChange}
+                        >
+                            {data?.meals?.map((meal, index) => (
+                                <option key={index} value={meal._id}>{meal.name}</option>
+                            ))}
+                        </select>
+                    </div>
+
+                    <div className="formInput" id='options'>
+                        <label>Choose Routines</label>
+                        <select
+                            id="routines"
+                            multiple
+                            onChange={handleMultiSelectChange}
+                        >
+                            {data?.routines?.map((routine, index) => (
+                                <option key={index} value={routine._id}>{routine.name}</option>
+                            ))}
+                        </select>
                     </div>
                 </form>
 

@@ -1,5 +1,7 @@
 import Entry from "../models/Entry.js"
 import User from "../models/User.js"
+import Routine from "../models/Routine.js"
+import Meal from "../models/Meal.js"
 
 export const createEntry = async (req, res, next) => {
 
@@ -73,4 +75,26 @@ export const createEntry = async (req, res, next) => {
     } catch (err) {
       next(err)
     }
+  }
+
+  export const getMealsAndRoutines = async(req, res, next) => {
+    const userId = req.params.id
+    let userRoutines, userMeals;
+    try{
+      userRoutines = await Routine.find({author: userId}).select('name _id').exec();
+    }
+    catch(err) {
+      next(err)
+    }
+    try {
+      userMeals = await Meal.find({author: userId}).select('name _id').exec();
+    }
+    catch(error) {
+      next(err)
+    }
+    const result = {
+      routines: userRoutines,
+      meals: userMeals
+    }
+    res.status(200).json(result);
   }
