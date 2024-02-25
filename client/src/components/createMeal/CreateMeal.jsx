@@ -1,17 +1,16 @@
-import './createMeal.css'
+import '../../popUp.css'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCancel } from '@fortawesome/free-solid-svg-icons'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { useContext, useState } from 'react';
 import axios from "axios"
-import useFetch from '../../hooks/useFetch';
 import { AuthContext } from '../../context/authContext';
+import { category } from '../../data';
 
 const CreateMeal = ({ setOpen }) => {
 
     const { user } = useContext(AuthContext);
     const [info, setInfo] = useState({});
-    const {data} = useFetch(`/classes/${user.class}`)
 
     // set the usestate to the data user passed 
     const handleChange = (e) => {
@@ -22,54 +21,67 @@ const CreateMeal = ({ setOpen }) => {
     const handleClick = async (e) => {
         e.preventDefault();
 
-        const newQuery = {
-            ...info, author: user.name
+        const newMeal = {
+            ...info, author: user._id
         }
         try {
-            await axios.post("http://localhost:5500/api/queries", newQuery, {
+            await axios.post("http://localhost:2000/api/meals", newMeal, {
                 withCredentials: false
             })
             setOpen(false)
-            console.log(newQuery)
+            console.log(newMeal)
         }
         catch (err) {
             console.log(err)
         }
     }
 
-
     return (
         <div className="modal">
             <div className="mContainer">
                 
-            <FontAwesomeIcon icon={faCancel} className="mClose" onClick={() => setOpen(false)}/>
+            <FontAwesomeIcon icon={faXmark} className="mClose" onClick={() => setOpen(false)}/>
 
-                <div className="mTitle">Send Query</div>
+                <div className="mTitle">Add Meal</div>
 
                 <form>
                     <input
                         className="formInput"
                         type="text"
                         onChange={handleChange}
-                        id="title"
-                        placeholder='Enter your query title'
+                        id="name"
+                        placeholder='Enter your Meal name'
                     />
                     <textarea
-                        name="Query"
+                        name="Description"
                         id="description"
                         cols="30"
                         rows="10"
                         onChange={handleChange}
-                        placeholder='Describe your query'>
+                        placeholder='Add nutrient details'>
                     </textarea>
+                    <input
+                        className="formInput"
+                        type="text"
+                        onChange={handleChange}
+                        id="recipe"
+                        placeholder='Add recipe links'
+                    />
+                    <input
+                        className="formInput"
+                        type="number"
+                        onChange={handleChange}
+                        id="time"
+                        placeholder='Enter time in minutes'
+                    />
                     <div className="formInput" id='options'>
-                    <label>Choose Teacher</label>
-                    <select id="queryTo">
+                    <label>Choose Category</label>
+                    <select id="category" onChange={handleChange}>
                         <option key={0} value="none">-</option>
                         {
-                            data?.subjects?.map((sub, index) => (
+                            category.map((c, index) => (
                                
-                                <option key={index} value={sub.teacher._id}>{sub.teacher.teachername}</option>
+                                <option key={index} value={c}>{c}</option>
                             ))
                         }
                     </select>

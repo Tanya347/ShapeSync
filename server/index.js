@@ -7,6 +7,7 @@ import userRoute from "./routes/users.js";
 import authRoute from "./routes/auth.js";
 import entryRoute from "./routes/entries.js";
 import routineRoute from "./routes/routines.js";
+import mealRoute from "./routes/meals.js";
 import cookieParser from "cookie-parser";
 import cors from "cors"
 
@@ -53,6 +54,7 @@ app.use("/api/auth", authRoute);
 app.use("/api/users", userRoute);
 app.use("/api/entries", entryRoute);
 app.use("/api/routines", routineRoute);
+app.use("/api/meals", mealRoute);
 
 app.listen(PORT, () => {
   console.log("Listening on port 2000");

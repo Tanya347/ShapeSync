@@ -33,9 +33,9 @@ const HomeComp = ({image, name, description, view}) => {
                 <p>View</p>
             </div>
         </div>
-        {openPopup && name == "meals" && <CreateMeal setOpen={setOpenPopup} />}
-        {openPopup && name == "entries" && <CreateEntry setOpen={setOpenPopup} />}
-        {openPopup && name == "routines" && <CreateRoutine setOpen={setOpenPopup} />}
+        {openPopup && name === "Meals" && <CreateMeal setOpen={setOpenPopup} />}
+        {openPopup && name === "Entries" && <CreateEntry setOpen={setOpenPopup} />}
+        {openPopup && name === "Routines" && <CreateRoutine setOpen={setOpenPopup} />}
     </div>
   )
 }

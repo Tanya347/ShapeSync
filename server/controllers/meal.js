@@ -9,7 +9,7 @@ export const createMeal = async (req, res, next) => {
       
       try {
         const user = await User.findById(savedMeal.author);
-        user.Meals.push(savedMeal._id);
+        user.meals.push(savedMeal._id);
         await user.save();
       }
       catch(err) {

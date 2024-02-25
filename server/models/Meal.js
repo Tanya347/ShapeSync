@@ -6,7 +6,7 @@ const MealSchema = new mongoose.Schema(
         author: {type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true},
         recipe: {type: String, default: ""},
         time: {type: Number, required: true},
-        Description: {type: String},
+        description: {type: String},
         category: {type: String, required: true}
     },
     {

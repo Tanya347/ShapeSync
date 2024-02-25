@@ -32,10 +32,14 @@
     cursor: pointer;
     padding: 5px;
     transition: all 0.3s ease-in-out;
+    background-color: black;
+    color: white;
+    margin: 5px 5px 0 0;
+    border-radius: 50%;
 }
 
 .mClose:hover {
-    color: rgba(0, 0, 0, 0.699);
+    background-color: var(--red);
 }
 
 .mTitle {
@@ -48,14 +52,15 @@
 .mContainer .formInput,
 #description {
     font-size: 1.0rem;
-    padding: 5px;
+    padding: 10px;
     margin: 15px;
+    font-family: "Dosis", sans-serif;
 }
 
 .mButton {
     border: none;
     padding: 10px 20px;
-    background-color: #7451F8;
+    background-color: var(--dark-orange);
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -66,7 +71,7 @@
 }
 
 .mButton:hover {
-    background-color: #7551f8a1;
+    background-color: var(--orange);
 }
 
 #options {
@@ -74,8 +79,13 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    font-size: 1.2rem;
 }
 
 #options label {
     margin-bottom: 10px;
+}
+
+#options select {
+    padding: 10px;
 }

@@ -2,10 +2,7 @@ import mongoose from "mongoose";
 
 const EntrySchema = new mongoose.Schema(
     {
-        date: {
-            type: Date,
-            required: true  
-        },
+        date: { type: Date, required: true },
         routines: [
             {
                 type: mongoose.Schema.Types.ObjectId,
@@ -23,13 +20,8 @@ const EntrySchema = new mongoose.Schema(
             ref: 'User',
             required: true
         },
-        duration: {
-            type: Number,
-            default: 30
-        },
-        calories: {
-            type: Number,
-        }
+        duration: { type: Number, default: 30 },
+        calories: { type: Number }
     },
     {
         timestamps: true
