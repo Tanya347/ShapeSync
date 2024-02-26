@@ -1,0 +1,76 @@
+.routinesView {
+    
+}
+
+.routinesView .routinesViewContainer{
+    margin: 100px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+}
+
+.routinesView .routinesViewContainer .routineViewItem {
+    border: 5px solid var(--red);
+    position: relative;
+    height: fit-content;
+}
+
+.routinesView .routinesViewContainer .routineImg {
+    width: 500px;
+    height: 300px;
+    filter: brightness(70%);
+}
+
+.routinesView .routinesViewContainer .routineImg img {
+    object-fit: cover;
+}
+
+.routinesView .routinesViewContainer .routineDetails {
+    background-color: rgba(0, 0, 0, 0.667);
+    border-radius: 10px;
+    color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.routinesViewContainer .routineDetails .routineName {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.routinesViewContainer .routineDetails .routineType {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--cream);
+}
+
+.routinesViewContainer .routineDetails .routinePart {
+    background-color: var(--red);
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 700;
+}
+
+.routinesViewContainer .routineLink {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color:white;
+    background-color: var(--red);
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.routinesViewContainer .routineLink:hover {
+    background-color: var(--dark-red);
+}

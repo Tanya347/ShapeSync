@@ -1,11 +1,10 @@
 import React, { useContext } from 'react'
 import Navbar from "../../components/Navbar/Navbar"
 import Footer from "../../components/Footer/Footer";
-import { faLink } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import useFetch from '../../hooks/useFetch';
 import { AuthContext } from '../../context/authContext'
 import "./meal.css"
+import { Link } from 'react-router-dom';
 
 const Meal = () => {
   const { user } = useContext(AuthContext)
@@ -26,6 +25,9 @@ const Meal = () => {
                 <div className="mealTime">{m.time} minutes</div>
                 <div className="mealCat">{m.category}</div>
               </div>
+              {m.recipe && <Link to={m.recipe} style={{textDecoration: "none", color:"black"}}>
+                  <div className="mealLink">Watch Recipe Video</div>
+              </Link>}
             </div>
           ))
         }
