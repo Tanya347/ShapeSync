@@ -7,7 +7,7 @@ import { useContext, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { AuthContext } from "../../context/authContext";
 
-function Login({ title, link }) {
+function Login() {
   const [credentials, setCredentials] = useState({
     username: undefined,
     password: undefined,

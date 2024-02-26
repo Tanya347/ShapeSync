@@ -43,18 +43,13 @@ export const createMeal = async (req, res, next) => {
     }
   };
   
-  export const getMeal = async (req, res, next) => {
-    try {
-      const meal = await Meal.findById(req.params.id);
-      res.status(200).json(meal);
-    } catch (err) {
-      next(err);
-    }
-  };
   
+
   export const getMeals = async (req, res, next) => {
+    const userId = req.params.userId;
+
     try {
-      const meals = await Meal.find();
+      const meals = await Meal.find({ author: userId });
       res.status(200).json(meals);
     } catch (err) {
       next(err)

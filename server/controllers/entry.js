@@ -59,18 +59,11 @@ export const createEntry = async (req, res, next) => {
     }
   };
   
-  export const getEntry = async (req, res, next) => {
-    try {
-      const entry = await Entry.findById(req.params.id);
-      res.status(200).json(entry);
-    } catch (err) {
-      next(err);
-    }
-  };
   
   export const getEntries = async (req, res, next) => {
+    const userId = req.params.userId;
     try {
-      const entries = await Entry.find()
+      const entries = await Entry.find({ author: userId })
         .populate('meals', 'name') 
         .populate('routines', 'name')
       res.status(200).json(entries);

@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import useFetch from '../../hooks/useFetch'
 import Navbar from "../../components/Navbar/Navbar"
 import Footer from "../../components/Footer/Footer"
 import "./entry.css"
+import { AuthContext } from '../../context/authContext'
 
 const Entries = () => {
 
-  const {data} = useFetch('/entries')
+  const { user } = useContext(AuthContext)
+
+
+  const {data} = useFetch(`/entries/${user._id}`)
   
   function formatDate(dateString) {
     // Convert the date string to a Date object

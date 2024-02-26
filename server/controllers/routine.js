@@ -43,18 +43,12 @@ export const createRoutine = async (req, res, next) => {
     }
   };
   
-  export const getRoutine = async (req, res, next) => {
-    try {
-      const routine = await Routine.findById(req.params.id);
-      res.status(200).json(routine);
-    } catch (err) {
-      next(err);
-    }
-  };
   
   export const getRoutines = async (req, res, next) => {
+    const userId = req.params.userId;
+
     try {
-      const routines = await Routine.find();
+      const routines = await Routine.find({ author: userId });
       res.status(200).json(routines);
     } catch (err) {
       next(err)
