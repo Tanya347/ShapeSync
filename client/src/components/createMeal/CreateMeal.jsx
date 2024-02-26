@@ -29,7 +29,6 @@ const CreateMeal = ({ setOpen }) => {
                 withCredentials: false
             })
             setOpen(false)
-            console.log(newMeal)
         }
         catch (err) {
             console.log(err)

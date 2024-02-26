@@ -14,6 +14,7 @@
 .entriesContainer .entryItem {
     height: 200px;
     text-align: center;
+    width: 500px;
     padding: 30px;
     border-radius: 20px;
     display: flex;
@@ -34,6 +35,7 @@
 .entryItem .mealsContainer {
     display: flex;
     gap:  10px;
+    flex-wrap: wrap;
 }
 
 .entryItem .mealsContainer .mealItem {
@@ -45,6 +47,7 @@
 
 .entryItem .routinesContainer {
     display: flex;
+    flex-wrap: wrap;
     gap:  10px;
 }
 

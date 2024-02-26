@@ -29,7 +29,6 @@ const CreateRoutine = ({ setOpen }) => {
                 withCredentials: false
             })
             setOpen(false)
-            console.log(newRoutine)
         }
         catch (err) {
             console.log(err)

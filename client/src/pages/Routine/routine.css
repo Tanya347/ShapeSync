@@ -1,6 +1,4 @@
-.routinesView {
-    
-}
+
 
 .routinesView .routinesViewContainer{
     margin: 100px 0;
@@ -15,6 +13,8 @@
 .routinesView .routinesViewContainer .routineViewItem {
     border: 5px solid var(--red);
     position: relative;
+    display: flex;
+    flex-direction: column;
     height: fit-content;
 }
 
