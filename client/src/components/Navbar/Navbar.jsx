@@ -3,11 +3,10 @@ import { useState, useContext } from 'react';
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useNavigate } from "react-router-dom"
-import { AuthContext } from "../../context/authContext"
+import { AuthContext } from "../../authContext"
 
 
 const Navbar = () => {
-    const [navbar, setNavbar] = useState(false);
 
     const navigate = useNavigate()
 
@@ -21,7 +20,7 @@ const Navbar = () => {
 
 
     return (
-        <div className={navbar ? 'navContainer active' : 'navContainer'}>
+        <div className='navContainer'>
             <Link to="/home"> 
                 <p className='navLogo'>ShapeSync</p>
             </Link>

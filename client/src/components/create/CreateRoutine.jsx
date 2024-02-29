@@ -1,13 +1,13 @@
-import '../../popUp.css'
+import './popUp.css'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { useContext, useState } from 'react';
 import axios from "axios"
-import { AuthContext } from '../../context/authContext';
-import { category } from '../../data';
+import { AuthContext } from '../../authContext.js';
+import {WorkoutType, BodyPart} from "../../data.js"
 
-const CreateMeal = ({ setOpen }) => {
+const CreateRoutine = ({ setOpen }) => {
 
     const { user } = useContext(AuthContext);
     const [info, setInfo] = useState({});
@@ -21,11 +21,11 @@ const CreateMeal = ({ setOpen }) => {
     const handleClick = async (e) => {
         e.preventDefault();
 
-        const newMeal = {
+        const newRoutine = {
             ...info, author: user._id
         }
         try {
-            await axios.post("http://localhost:2000/api/meals", newMeal, {
+            await axios.post("http://localhost:2000/api/routines", newRoutine, {
                 withCredentials: false
             })
             setOpen(false)
@@ -41,7 +41,7 @@ const CreateMeal = ({ setOpen }) => {
                 
             <FontAwesomeIcon icon={faXmark} className="mClose" onClick={() => setOpen(false)}/>
 
-                <div className="mTitle">Add Meal</div>
+                <div className="mTitle">Create Routine</div>
 
                 <form>
                     <input
@@ -49,38 +49,37 @@ const CreateMeal = ({ setOpen }) => {
                         type="text"
                         onChange={handleChange}
                         id="name"
-                        placeholder='Enter your Meal name'
+                        placeholder='Enter the Workout Name'
                     />
-                    <textarea
-                        name="Description"
-                        id="description"
-                        cols="30"
-                        rows="10"
-                        onChange={handleChange}
-                        placeholder='Add meal details'>
-                    </textarea>
                     <input
                         className="formInput"
                         type="text"
                         onChange={handleChange}
-                        id="recipe"
-                        placeholder='Add recipe links'
+                        id="link"
+                        placeholder='Add workout link'
                     />
-                    <input
-                        className="formInput"
-                        type="number"
-                        onChange={handleChange}
-                        id="time"
-                        placeholder='Enter time in minutes'
-                    />
+
                     <div className="formInput" id='options'>
-                    <label>Choose Category</label>
-                    <select id="category" onChange={handleChange}>
+                    <label>Choose Workout Type</label>
+                    <select id="workout_type" onChange={handleChange}>
                         <option key={0} value="none">-</option>
                         {
-                            category.map((c, index) => (
+                            WorkoutType.map((w, index) => (
                                
-                                <option key={index} value={c}>{c}</option>
+                                <option key={index} value={w}>{w}</option>
+                            ))
+                        }
+                    </select>
+                    </div>
+
+                    <div className="formInput" id='options'>
+                    <label>Choose Body Part</label>
+                    <select id="body_part" onChange={handleChange}>
+                        <option key={0} value="none">-</option>
+                        {
+                            BodyPart.map((b, index) => (
+                               
+                                <option key={index} value={b}>{b}</option>
                             ))
                         }
                     </select>
@@ -95,4 +94,4 @@ const CreateMeal = ({ setOpen }) => {
     )
 }
 
-export default CreateMeal
+export default CreateRoutine

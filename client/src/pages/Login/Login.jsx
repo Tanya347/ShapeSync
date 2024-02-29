@@ -5,7 +5,7 @@ import "./login.css";
 import axios from "axios";
 import { useContext, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { AuthContext } from "../../context/authContext";
+import { AuthContext } from "../../authContext";
 
 function Login() {
   const [credentials, setCredentials] = useState({

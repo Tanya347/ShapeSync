@@ -5,7 +5,7 @@ import Register from "./pages/Register/Register";
 import Entries from "./pages/Entry/Entries";
 import Routines from "./pages/Routine/Routines"
 import { useContext} from "react";
-import { AuthContext } from "./context/authContext";
+import { AuthContext } from "./authContext";
 import Home from "./pages/home/Home";
 import Meal from "./pages/Meal/Meal";
 

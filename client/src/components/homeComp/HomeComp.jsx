@@ -4,9 +4,9 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faEye} from '@fortawesome/free-solid-svg-icons'
-import CreateMeal from '../createMeal/CreateMeal';
-import CreateEntry from '../createEntry/CreateEntry';
-import CreateRoutine from '../createRoutine/CreateRoutine';
+import CreateMeal from '../create/CreateMeal';
+import CreateEntry from '../create/CreateEntry';
+import CreateRoutine from '../create/CreateRoutine';
 
 const HomeComp = ({image, name, description, view}) => {
     

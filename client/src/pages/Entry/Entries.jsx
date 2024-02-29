@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import useFetch from '../../hooks/useFetch'
+import useFetch from '../../useFetch'
 import Navbar from "../../components/Navbar/Navbar"
 import Footer from "../../components/Footer/Footer"
 import "./entry.css"
-import { AuthContext } from '../../context/authContext'
+import { AuthContext } from '../../authContext'
 
 const Entries = () => {
 

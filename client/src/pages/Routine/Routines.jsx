@@ -1,8 +1,8 @@
 import React, { useContext } from 'react'
 import Navbar from "../../components/Navbar/Navbar"
 import Footer from "../../components/Footer/Footer";
-import useFetch from '../../hooks/useFetch';
-import { AuthContext } from '../../context/authContext'
+import useFetch from '../../useFetch';
+import { AuthContext } from '../../authContext'
 import './routine.css'
 import { images } from '../../data';
 import { Link } from 'react-router-dom';

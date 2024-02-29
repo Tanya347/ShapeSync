@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import "./landing.css"
-import { AuthContext } from '../../context/authContext'
+import { AuthContext } from '../../authContext'
 import {Link} from "react-router-dom"
 
 const Landing = () => {

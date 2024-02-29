@@ -1,11 +1,11 @@
-import '../../popUp.css'
+import './popUp.css'
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { useContext, useState } from 'react';
 import axios from "axios"
-import useFetch from '../../hooks/useFetch';
-import { AuthContext } from '../../context/authContext';
+import useFetch from '../../useFetch';
+import { AuthContext } from '../../authContext';
 
 const CreateEntry = ({ setOpen }) => {
 
