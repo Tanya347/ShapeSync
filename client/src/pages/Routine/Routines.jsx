@@ -4,7 +4,6 @@ import Footer from "../../components/Footer/Footer";
 import useFetch from '../../useFetch';
 import { AuthContext } from '../../authContext'
 import './routine.css'
-import { images } from '../../data';
 import { Link } from 'react-router-dom';
 
 const Routines = () => {
@@ -18,7 +17,7 @@ const Routines = () => {
           {
             data?.map((r, index) => (
               <div className="routineViewItem" key={index}>
-                <img src={images[r.workout_type]} alt="" className='routineImg'/>
+                {/* <img src={images[r.workout_type]} alt="" className='routineImg'/> */}
                 <div className="routineDetails">
                   <div className="routineName">{r.name}</div>
                   <div className="routineType">{r.workout_type}</div>

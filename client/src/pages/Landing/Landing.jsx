@@ -10,7 +10,6 @@ const Landing = () => {
   return (
     <div className='landing'>
       <div className="header">
-        <img src="/assets/header.jpg" alt="" />
       </div>
       <div className="upper-layer">
         <h1>Welcome to <span className='brand-name'>ShapeSync</span></h1>

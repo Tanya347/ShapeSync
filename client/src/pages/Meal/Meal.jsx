@@ -18,7 +18,6 @@ const Meal = () => {
         {
           data?.map((m, index)=>(
             <div className="mealViewItem"  key={index}>
-              <img src="/Assets/meal.jpg" alt="" className='mealImg' />
               <div className="mealDetails">
                 <div className="mealName">{m.name}</div>
                 <div className="mealDesc">{m.description}</div>

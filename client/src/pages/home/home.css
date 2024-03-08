@@ -2,12 +2,20 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    margin-top: 100px;
+    gap: 50px;
+    height: 300px;
 }
 
-.home .banner img{
-    height: 300px;
-    margin-top: 80px;
+.home .banner h1 {
+    font-size: 2.5rem;
 }
+
+.home .banner p {
+    font-size: 1.5rem;
+}
+
 
 .home .mainContainer {
     margin: 50px 0;

@@ -4,13 +4,11 @@ html {
 }
 
 .registerCard {
-    background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .5)), url("../../../public/Assets/register.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 1000px;
     overflow: hidden;
     position: relative;
-    /* padding-top: 20px; */
 }
 
 .registerCard .center {
@@ -19,7 +17,7 @@ html {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
-    background: white;
+    background-color: #fecda630;
     border-radius: 10px;
 }
 

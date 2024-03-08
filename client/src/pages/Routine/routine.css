@@ -15,21 +15,14 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    height: fit-content;
-}
-
-.routinesView .routinesViewContainer .routineImg {
     width: 500px;
+    background-color: rgb(45, 4, 4);
     height: 300px;
-    filter: brightness(70%);
 }
 
-.routinesView .routinesViewContainer .routineImg img {
-    object-fit: cover;
-}
 
 .routinesView .routinesViewContainer .routineDetails {
-    background-color: rgba(0, 0, 0, 0.667);
+    background-color: rgba(255, 255, 255, 0.392);
     border-radius: 10px;
     color: white;
     padding: 10px;
@@ -39,7 +32,7 @@
     justify-content: center;
     gap: 10px;
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }

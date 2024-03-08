@@ -10,23 +10,24 @@ const Home = () => {
     <div className='home'>
       <Navbar />
       <div className="banner">
-        <img src="/Assets/banner.jpg" alt="" />
+        <h1>Welcome to ShapeSync</h1>
+        <p>The one stop solution for your fitness journey</p>
       </div>
       <div className="mainContainer">
         <HomeComp 
-          image="/Assets/planner.png" 
+          image="https://media.geeksforgeeks.org/wp-content/uploads/20240308220039/planner.png" 
           name="Entries" 
           description="Keep track of your daily progress"
           view="/entries"
         />
         <HomeComp 
-          image="/Assets/routine.png" 
+          image="https://media.geeksforgeeks.org/wp-content/uploads/20240308220039/routine.png" 
           name="Routines"
           description="Add personalized routines"
           view="/routines"
         />
         <HomeComp 
-          image="/Assets/meal.png" 
+          image="https://media.geeksforgeeks.org/wp-content/uploads/20240308220038/meal.png" 
           name="Meals"
           description="Add personalized meals"
           view="/meals"

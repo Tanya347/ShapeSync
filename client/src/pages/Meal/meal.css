@@ -12,14 +12,13 @@
 .mealsView .mealsViewContainer .mealViewItem {
     border: 5px solid var(--red);
     position: relative;
+    height: 300px;
     width: 300px;
     display: flex;
     flex-direction: column;
 }
 
-.mealsView .mealsViewContainer .mealImg {
-    height: 300px;
-}
+
 
 .mealsView .mealsViewContainer .mealDetails {
     background-color: white;
@@ -31,7 +30,7 @@
     justify-content: center;
     gap: 10px;
     position: absolute;
-    top: 40%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
