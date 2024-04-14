@@ -26,7 +26,7 @@ const CreateEntry = ({ setOpen }) => {
             ...info, author: user._id
         }
         try {
-            await axios.post('http://localhost:2000/api/entries/', newEntry, {
+            await axios.post('https://shapesync.onrender.com/api/entries/', newEntry, {
                 withCredentials: false
             })
             setOpen(false)

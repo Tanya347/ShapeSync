@@ -37,16 +37,16 @@ app.use(express.json());
 app.use(helmet());
 
 // if(process.env.NODE_ENV === "development") {
+  // app.use(cors({
+  //   origin: "http://localhost:3000",
+  //   credentials: true
+  // }))
+// } else {
   app.use(cors({
-    origin: "http://localhost:3000",
+    origin: "https://shape-sync.netlify.app",
     credentials: true
   }))
-// } else {
-//   app.use(cors({
-//     origin: "https://paradive.netlify.app",
-//     credentials: true
-//   }))
-// 
+
 
 app.use(morgan("common"));
 

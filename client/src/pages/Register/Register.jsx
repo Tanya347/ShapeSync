@@ -40,7 +40,7 @@ function Register() {
           profilePicture: url,
         };
 
-        await axios.post("/auth/register", newUser, {withcredentials: false})
+        await axios.post("https://shapesync.onrender.com/api/auth/register", newUser, {withcredentials: false})
 
         navigate("/login");
       } catch (err) {
@@ -48,7 +48,7 @@ function Register() {
       }
     } else {
       try {
-        await axios.post("/auth/register", info, {withcredentials: false})
+        await axios.post("https://shapesync.onrender.com/api/auth/register", info, {withcredentials: false})
 
         navigate("/login");
       } catch (err) {
