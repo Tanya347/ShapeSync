@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 const Routines = () => {
   const { user } = useContext(AuthContext)
-  const {data} = useFetch(`/routines/${user._id}`)
+  const {data} = useFetch(`routines/${user._id}`)
 
   return (
     <div className='routinesView'>

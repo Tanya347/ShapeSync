@@ -11,7 +11,7 @@ const CreateEntry = ({ setOpen }) => {
 
     const { user } = useContext(AuthContext);
     const [info, setInfo] = useState({});
-    const {data} = useFetch(`/entries/fetchMealsAndRoutines/${user._id}`)
+    const {data} = useFetch(`entries/fetchMealsAndRoutines/${user._id}`)
 
     // set the usestate to the data user passed 
     const handleChange = (e) => {

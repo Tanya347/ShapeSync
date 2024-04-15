@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const Meal = () => {
   const { user } = useContext(AuthContext)
-  const {data} = useFetch(`/meals/${user._id}`)
+  const {data} = useFetch(`meals/${user._id}`)
 
   return (
     <div className='mealsView'>

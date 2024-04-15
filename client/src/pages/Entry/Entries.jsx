@@ -10,7 +10,7 @@ const Entries = () => {
   const { user } = useContext(AuthContext)
 
 
-  const {data} = useFetch(`/entries/${user._id}`)
+  const {data} = useFetch(`entries/${user._id}`)
   
   function formatDate(dateString) {
     // Convert the date string to a Date object
