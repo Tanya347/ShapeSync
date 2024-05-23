@@ -25,7 +25,7 @@ const CreateRoutine = ({ setOpen }) => {
             ...info, author: user._id
         }
         try {
-            await axios.post("https://shapesync.onrender.com/api/routines", newRoutine, {
+            await axios.post(`${process.env.REACT_APP_API_URL}/routines`, newRoutine, {
                 withCredentials: false
             })
             setOpen(false)

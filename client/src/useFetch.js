@@ -11,7 +11,7 @@ const useFetch = (url) => {
             setLoading(true);
             try {
 
-                const res = await axios.get(`https://shapesync.onrender.com/api/${url}`)
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/${url}`)
                 
                 setData(res.data);
             } catch (err) {

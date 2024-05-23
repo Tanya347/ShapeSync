@@ -25,7 +25,7 @@ const CreateMeal = ({ setOpen }) => {
             ...info, author: user._id
         }
         try {
-            await axios.post("https://shapesync.onrender.com/api/meals", newMeal, {
+            await axios.post(`${process.env.REACT_APP_API_URL}/meals`, newMeal, {
                 withCredentials: false
             })
             setOpen(false)
